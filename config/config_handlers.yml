@@ -1,0 +1,8 @@
+# use oath.yml to conrol action if has need Oauth verify
+modules/*/config/oauth.yml:
+  class: TncOauth2ServerConfigHandler
+  file: %SF_PLUGINS_DIR%/tncOauth2ServerPlugin/config/TncOauth2ServerConfigHandler.php
+
+config/filters.yml:
+  class: TncOauth2ServerConfigFilterHandler
+  file: %SF_PLUGINS_DIR%/tncOauth2ServerPlugin/config/TncOauth2ServerConfigFilterHandler.php

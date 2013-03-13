@@ -1,0 +1,18 @@
+all:
+  oauth2_server:
+
+    config:
+      access_lifetime:           86400
+      refresh_token_lifetime:    2592000
+      always_issue_new_refresh_token: true
+      redirect_uri: ''
+
+      ## Get user data by requested username
+      get_user_callback:
+        class: UserPeer
+        method: getArrayForOauth2
+
+     ## Check user if correct by requested password
+      check_user_callback:
+        class: UserPeer
+        method: checkPasswordForOauth2

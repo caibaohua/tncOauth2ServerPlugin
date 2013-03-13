@@ -1,0 +1,31 @@
+## For other community, please change your database connection name here ##
+flirten:
+  _attributes:
+    package: plugins.tncOauth2ServerPlugin.lib.model
+  oauth_access_tokens:
+    _attributes: { phpName: OauthAccessTokens }
+    access_token: { type: VARCHAR, size: '100', primaryKey: true, required: true, defaultValue: '' }
+    client_id: { type: VARCHAR, size: '80', required: false, defaultValue: '' }
+    user_id: { type: INTEGER, size: '11', required: false, defaultValue: 0 }
+    expires: { type: TIMESTAMP, required: true, defaultValue: '0000-00-00 00:00:00' }
+    scope: { type: VARCHAR, size: '100', required: false, defaultValue: '' }
+  oauth_authorization_codes:
+    _attributes: { phpName: OauthAuthorizationCodes }
+    authorization_code: { type: VARCHAR, size: '100', primaryKey: true, required: true, defaultValue: '' }
+    client_id: { type: VARCHAR, size: '80', required: false, defaultValue: '' }
+    user_id: { type: INTEGER, size: '11', required: false, defaultValue: 0 }
+    redirect_uri: { type: LONGVARCHAR, required: false }
+    expires: { type: TIMESTAMP, required: true, defaultValue: '0000-00-00 00:00:00' }
+    scope: { type: VARCHAR, size: '100', required: false, defaultValue: '' }
+  oauth_clients:
+    _attributes: { phpName: OauthClients }
+    client_id: { type: VARCHAR, size: '80', primaryKey: true, required: true, defaultValue: '' }
+    client_secret: { type: VARCHAR, size: '80', required: false }
+    redirect_uri: { type: LONGVARCHAR, required: false }
+  oauth_refresh_tokens:
+    _attributes: { phpName: OauthRefreshTokens }
+    refresh_token: { type: VARCHAR, size: '100', primaryKey: true, required: true, defaultValue: '' }
+    client_id: { type: VARCHAR, size: '80', required: false, defaultValue: '' }
+    user_id: { type: INTEGER, size: '11', required: false, defaultValue: 0 }
+    expires: { type: TIMESTAMP, required: true, defaultValue: '0000-00-00 00:00:00' }
+    scope: { type: VARCHAR, size: '100', required: false, defaultValue: '' }
